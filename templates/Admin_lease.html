@@ -1,0 +1,51 @@
+{% extends 'adminnav.html' %}
+{% block admin_body %}
+<div class="topspacer"></div>
+<div class="container my-4">
+  <h2 class="mb-4">Lease Records</h2>
+  <div id="leaseRecordsContainer">
+    <!-- Data Table -->
+    <table id="leaseTable" class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Lease ID</th>
+          <th scope="col">Apartment ID</th>
+          <th scope="col">Tenant</th>
+          <th scope="col">Start Date</th>
+          <th scope="col">End Date</th>
+          <th scope="col">Rent</th>
+          <th scope="col">Status</th>
+          <th scope="col">Details</th>
+        </tr>
+      </thead>
+      <tbody id="lease-table-body">
+        <!-- Table rows will be dynamically populated by JavaScript -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="leaseDetailsModal" tabindex="-1" aria-labelledby="leaseModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="leaseModalLabel">Lease Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Lease ID:</strong> <span id="modal-lease-id"></span></p>
+        <p><strong>Apartment ID:</strong> <span id="modal-apartment-id"></span></p>
+        <p><strong>Tenant:</strong> <span id="modal-tenant"></span></p>
+        <p><strong>Start Date:</strong> <span id="modal-start-date"></span></p>
+        <p><strong>End Date:</strong> <span id="modal-end-date"></span></p>
+        <p><strong>Rent:</strong> <span id="modal-rent"></span></p>
+        <p><strong>Status:</strong> <span id="modal-status"></span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

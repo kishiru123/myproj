@@ -1,0 +1,54 @@
+{% extends 'adminnav.html' %}
+{% block admin_body %}
+<div class="topspacer"></div>
+<main class="main py-5">
+  <div class="container my-4">
+    <h2 class="mb-4">Maintenance Records</h2>
+    <!-- Data Table -->
+    <table id="maintenanceTable" class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Record ID</th>
+          <th scope="col">Apartment ID</th>
+          <th scope="col">Date</th>
+          <th scope="col">Type</th>
+          <th scope="col">Description</th>
+          <th scope="col">Status</th>
+          <th scope="col">Technician</th>
+          <th scope="col">Cost</th>
+          <th scope="col">Details</th>
+        </tr>
+      </thead>
+      <tbody id="maintenance-table-body">
+        <!-- Table rows will be dynamically populated by JavaScript -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Modal -->
+<div class="modal fade" id="maintenanceDetailsModal" tabindex="-1" aria-labelledby="maintenanceModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="maintenanceModalLabel">Maintenance Record Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Record ID:</strong> <span id="modal-record-id"></span></p>
+        <p><strong>Apartment ID:</strong> <span id="modal-apartment-id"></span></p>
+        <p><strong>Date:</strong> <span id="modal-date"></span></p>
+        <p><strong>Type:</strong> <span id="modal-type"></span></p>
+        <p><strong>Description:</strong> <span id="modal-description"></span></p>
+        <p><strong>Status:</strong> <span id="modal-status"></span></p>
+        <p><strong>Technician:</strong> <span id="modal-technician"></span></p>
+        <p><strong>Cost:</strong> <span id="modal-cost"></span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+{% endblock %}

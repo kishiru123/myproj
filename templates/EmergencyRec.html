@@ -1,0 +1,48 @@
+{%extends 'adminnav.html'%}
+{%block admin_body%}
+<div class="topspacer"></div>
+  <main class="main py-5">
+    <div class="container my-4">
+      <h2 class="mb-4">Emergency Records</h2>
+      <!-- Data Table -->
+      <table id="emergencyTable" class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Emergency ID</th>
+            <th scope="col">Unit Number</th>
+            <th scope="col">Date</th>
+            <th scope="col">Type</th>
+            <th scope="col">Description</th>
+            <th scope="col">Status</th>
+            <th scope="col">Details</th>
+          </tr>
+        </thead>
+        <tbody id="emergency-table-body"></tbody>
+      </table>
+    </div>
+
+ <!-- Emergency Details Modal -->
+<div class="modal fade" id="emergencyDetailsModal" tabindex="-1" aria-labelledby="emergencyModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="emergencyModalLabel">Emergency Details</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <p><strong>Emergency ID:</strong> <span id="modal-emergency-id"></span></p>
+              <p><strong>Unit Number:</strong> <span id="modal-unit-number"></span></p>
+              <p><strong>Date:</strong> <span id="modal-date"></span></p>
+              <p><strong>Type:</strong> <span id="modal-type"></span></p>
+              <p><strong>Description:</strong> <span id="modal-description"></span></p>
+              <p><strong>Status:</strong> <span id="modal-status"></span></p>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+  </main>
+{%endblock%}

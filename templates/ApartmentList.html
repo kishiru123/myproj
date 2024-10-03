@@ -1,0 +1,55 @@
+{% extends 'adminnav.html' %}
+{% block admin_body %}
+<div class="topspacer"></div>
+  <main class="main py-5">
+    <div class="container my-4">
+      <h2 class="mb-4">Apartment List</h2>
+      <!-- Data Table -->
+      <table id="apartmentTable" class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Apartment ID</th>
+            <th scope="col">Building</th>
+            <th scope="col">Floor</th>
+            <th scope="col">Type</th>
+            <th scope="col">Size</th>
+            <th scope="col">Status</th>
+            <th scope="col">Tenant</th>
+            <th scope="col">Rent</th>
+            <th scope="col">Last Inspection</th>
+            <th scope="col">Condition</th>
+            <th scope="col">Details</th>
+          </tr>
+        </thead>
+        <tbody id="apartment-table-body"></tbody>
+      </table>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="detailsModalLabel">Apartment Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p><strong>Apartment ID:</strong> <span id="modal-apartment-id"></span></p>
+            <p><strong>Building:</strong> <span id="modal-building"></span></p>
+            <p><strong>Floor:</strong> <span id="modal-floor"></span></p>
+            <p><strong>Type:</strong> <span id="modal-type"></span></p>
+            <p><strong>Size:</strong> <span id="modal-size"></span></p>
+            <p><strong>Status:</strong> <span id="modal-status"></span></p>
+            <p><strong>Tenant:</strong> <span id="modal-tenant"></span></p>
+            <p><strong>Rent:</strong> <span id="modal-rent"></span></p>
+            <p><strong>Last Inspection:</strong> <span id="modal-inspection"></span></p>
+            <p><strong>Condition:</strong> <span id="modal-condition"></span></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}

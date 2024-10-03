@@ -1,0 +1,80 @@
+{% extends 'adminnav.html' %}
+
+{% block admin_body %}
+<div class="signupspacer"></div>
+<main class="container my-5 d-flex justify-content-center align-items-center" style="height: calc(100vh - -20px);">
+    <div class="w-100" style="max-width: 1000px;">
+        <canvas id="myChart"></canvas>
+    </div>
+</main>
+
+<div class="container mt-5">
+    <table id="visitorTable" class="display table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Visitor Type</th>
+                <th>Visit Date</th>
+                <th>Purpose</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="userTableBody">
+            <!-- Rows will be populated here -->
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal for Viewing Google Forms Response -->
+<div class="modal fade" id="responseModal" tabindex="-1" aria-labelledby="responseModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="responseModalLabel">Response Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Name:</strong> <span id="responseName"></span></p>
+                <p><strong>Visitor Type:</strong> <span id="responseVisitorType"></span></p>
+                <p><strong>Visit Date:</strong> <span id="responseVisitDate"></span></p>
+                <p><strong>Purpose:</strong> <span id="responsePurpose"></span></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" id="deleteResponseBtn">Delete Response</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // Function to create the engagement chart
+    function createEngagementChart(chartId) {
+      const ctx = document.getElementById(chartId).getContext('2d');
+      const myChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+              labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+              datasets: [{
+                  label: '1 Week People Engagement',
+                  data: [3, 6, 3, 4, 1, 6, 7],
+                  backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                  borderColor: 'rgba(75, 192, 192, 1)',
+                  borderWidth: 1
+              }]
+          },
+          options: {
+              scales: {
+                  y: {
+                      beginAtZero: true
+                  }
+              }
+          }
+      });
+    }
+
+    // Call the function to create the chart
+    createEngagementChart('myChart');
+  </script>
+{% endblock %}
