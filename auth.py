@@ -1,13 +1,12 @@
 from flask import Blueprint, request, render_template, flash, redirect, url_for, session
 import pymysql
 
-authen = pymysql.connect(
-    host='localhost',
-    user="root",
-    password="",
-    database="apartment",
-    cursorclass=pymysql.cursors.DictCursor
-)
+authen=pymysql.connect(host='irvinjay123.mysql.pythonanywhere-services.com',
+                    user="irvinjay123",
+                     password="",
+                    database="apartment",
+                    cursorclass=pymysql.cursors.DictCursor)
+
 
 authenticated = Blueprint('authenticated', __name__)
 

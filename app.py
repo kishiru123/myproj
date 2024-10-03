@@ -9,8 +9,8 @@ import pymysql.cursors
 
 secret_key=os.urandom(10)
 
-conn=pymysql.connect(host='localhost',
-                    user="root",
+conn=pymysql.connect(host='irvinjay123.mysql.pythonanywhere-services.com',
+                    user="irvinjay123",
                      password="",
                     database="apartment",
                     cursorclass=pymysql.cursors.DictCursor)
