@@ -2,10 +2,10 @@ from flask import Blueprint, request, render_template, flash, redirect, url_for,
 import pymysql
 
 
-con_admin = pymysql.connect(host='irvinjay123.mysql.pythonanywhere-services.com',
+con_admin=pymysql.connect(host='irvinjay123.mysql.pythonanywhere-services.com',
                     user="irvinjay123",
                      password="",
-                    database="apartment",
+                    database="default",
                     cursorclass=pymysql.cursors.DictCursor)
 
 
